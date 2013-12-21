@@ -1,4 +1,159 @@
 <section data-type="chapter">
-<h1>This Is a Heading</h1>
-<p>This is some text.</p>
+<h1>The O'Reilly Toolchain and Atlas in Context</h1>
+
+<p>There are 3 fundamental concepts in O'Reilly's approach to publishing that have been consistently applied for many years, starting with Dale Dougherty's work on DocBook in 1993 [???]:</p>
+
+<ul>
+	<li>A single source of content semantically rich content stored in an open format. &nbsp;This is the heart of the approach -- that everyone should work from a single master source where all changes would be applied. &nbsp;</li>
+	<li><span style="font-size: 17px; line-height: 1.5em;">Version control. &nbsp;The version control system would ensure that each change (from authors, editors, production staff, etc) could be smoothly incorporated into the master source. &nbsp;The version control system tracks to a granular level who made what change and when, provides a way to *merge* in changes from other people, and gives the ability to roll back to a point in time.</span></li>
+	<li>Transformation engines. &nbsp;Once the content is in a single source, it can be transformed using any number of techniques into other consumption formats, such as PDF, Mobi, EPUB, HTML (for the web), or any new version that comes along.</li>
+</ul>
+
+<p>Over the years, we've refined this approach by eliminating technologies that only a handful of highly trained professionals can use and replacing them with more accessible and &quot;mainstream&quot; technologies. &nbsp;The result of this work is a toolchain we call Atlas, which vastly lowers the barriers to entry to this approach.</p>
+
+<p>While the underlying technologies at each step may have changed, the approach, however, is one that has withstood the test of time. &nbsp;So, while we'll talk a good bit about Atlas, the goal of this piece is to explain the approach to publishing that Atlas embodies, and what this approach has allowed us to do.</p>
+
+<p>The following sections explore these ideas in more detail.</p>
+
+<section data-type="sect1">
+<h1>Single Source Content</h1>
+
+<p><span style="font-size: 17px; line-height: 1.5em;">This is perhaps the most fundamental aspect of the system: all changes are made and occur in a single source. &nbsp;But, it should not just be any format. &nbsp;The ideal is:</span></p>
+
+<ul>
+	<li>Plain text. &nbsp;Plain text is the most fundamental requirement for content longevity. &nbsp;Binary formats (like those used in many word processors or desktop publishing tools) will by their nature lock you into a particular tool chain, or even a particular version. &nbsp;Given that many books can lie fallow for years before updating, you might find yourself having to convert from a very old format that is no longer supported. &nbsp;Plain text, on the other hand, will (most likely!) always be supported on any system and by any tool.</li>
+	<li>Semantically rich. &nbsp;It's not enough to have plain text, though. &nbsp;That text should also be semantically rich, meaning that both the reader and a machine can determine what the elements are. &nbsp;For example, you should be able to tell which sections of a chink of text represent a chapter, which are a sidebar, or an equation. &nbsp;</li>
+	<li>Open format. &nbsp;Finally, the content should be in an open, non-proprietary format that can evolve over time. &nbsp;If it's not open, you again face the potential for lock-in.&nbsp;</li>
+</ul>
+
+<p>There are many examples of plain text formats: Latex, DocBook XML, DITA, AsciiDoc, and a host of others. &nbsp;</p>
+
+<p>In the original O'Reilly Toolchain, we used DocBook XML, a standard that O'Reilly was intimately involved in creating. &nbsp;(Dale Dougherty, O'Reilly co-founder, was an original member of the committee, and Lenny Mueller wrote the seminal book on the subject.) &nbsp;DocBook defines an incredibly rich dialect for structured information, and has evolved to accommodate many different requirements. &nbsp;O'Reilly has been using DocBook since the mid-90s, and converted the majority of our content to the format starting in 2006. &nbsp;</p>
+
+<p>*********************************<br />
+* add an example of docbook here<br />
+*********************************</p>
+
+<p>The key weakness of DocBook, thought, is that it presents a very high bar for the author. &nbsp;While many of our authors come from very technical fields and were comfortable working in the format, most were not. &nbsp;So, consequently, most of them would write in a format like MS Word using a special template, and we'd send it our for conversion. &nbsp;Once it was converted, our production staff would work from this as a single source. &nbsp;</p>
+
+<p>However, this approach is not ideal. &nbsp;First, obviously, is the time and expense required to make the conversion. &nbsp;More importantly, however, is that it was difficult for many authors, editor, or production staff to make changes once the material is converted to DocBook without specialized WYSIWYG tools for XML editing. While these tools exist, they tend to be specialized and not terribly mainstream.&nbsp;</p>
+
+<p>Consequently, &nbsp;we started looking exploring a variety of ways to lower the barriers to entry to this format. &nbsp;The most promising experiment was with a format called AsciiDoc, which was a much simpler format whose elements mapped directly to the corresponding elements in DocBook. &nbsp;Here's an example:</p>
+
+<p>*********************************<br />
+* add an example of asciidoc<br />
+********************************* &nbsp;</p>
+
+<p>As you can see, it's a far simpler looking format, and we began using it in earnest around 2010. &nbsp;Despite this improvement, AsciiDoc was still too high a barrier for many authors, editor, and production staff. &nbsp;In particular, the lack of a WYSIWYG experience was cited as the&nbsp;</p>
+
+<p>So, starting earlier this year, we began work on a new format that would address these key weaknesses. &nbsp;The key requirement we had was that the format be able to accommodate the semantic richness as DocBook and be easy to edit. &nbsp;In looking at the options, we realized that HTML5 offered this potential. &nbsp;First, it's an open standard that had simple mechanism to add our required semantics (via the &quot;class&quot; attribute), and (more importantly) many browsers now support the concept of &quot;contentediable,&quot; which is a way to edit HTML in the browser. &nbsp;</p>
+
+<p>This led us to create what we're calling HTMLBook, which is an open format described here:</p>
+
+<p>*********************************<br />
+* htmlbook github repo<br />
+********************************* &nbsp;</p>
+
+<p>Basically, we took a lot of the semantic elements used in EPUB and applied them to HTML5 so that the content would be both rich and editable. &nbsp;As we've socialized the idea we've accepted contributions (known as &quot;pull requests&quot;) from outside O'Reilly, and even had a &quot;fork&quot; for use in textbooks. &nbsp;</p>
+
+<p>*********************************<br />
+* textbook github repo<br />
+*********************************&nbsp;</p>
+
+<p>This allowed us to make a new visual editor in Atlas that provided a WYSIWYG a feature that is increasingly built into all modern browsers.</p>
+
+<p>********************************************************************<br />
+* htmlbook github repo or maybe even a video of the editor in action<br />
+*******************************************************************</p>
+
+<p>Our goal is to make writing and publishing the book as simple and easy as blogging, while still fully enabling rich version control features, the second key pillars of our approach to publishing. &nbsp;(It's probably worth noting that you can also still write in DocBook, AsciiDoc, or Markdown, but you only get the visual editor if you use HTMLBook.)</p>
+</section>
+
+<p><br />
+=== Version control</p>
+
+<p>A version control system allow people to work on the set of source files. &nbsp;Originally a tool from the software world, a version control system keeps track of all changes to a set of files, who made them and when, and ensures that any changes can be rolled back to some prior state. Originally, we used a VCS called Subversion, a command-line focused tool that allows user to &quot;check out&quot; the files when they want to work on them and then check their work back in when they're done. &nbsp;&nbsp;</p>
+
+<p>A few years ago, at the urging of some of our authors, we switched to another system called Git. &nbsp;While at first this seemed like a minor change, it became increasingly clear that this was not simply a case of building a better mousetrap. &nbsp;The features and ecosystem built up around Git offered fundamentally new opportunities for us to explore, and Atlas is designed to work with Git as a backend so that you can easily get the benefits of this powerful tool.</p>
+
+<p>==== A decentralized, collaborative workflow</p>
+
+<p>The first and most change is that Git provides a decentralized workflow. &nbsp;So, unlik Subversion, where there is a central place where people check out the code and make sure that they don't step on each others work, Git is designed to allow people to work together simultaneously in their own copies. &nbsp;Each person works in his or her own &quot;branch,&quot; which isolates their work from the main flow, and then &quot;merge&quot; their changes back into the master branch. &nbsp;People working in other branches can &quot;pull&quot; changes at any time so that they have an up to date copy.</p>
+
+<p>The main advantage of this approach is that it eliminates a lot of the need to send Word files back and forth, and then go through the painful process of compiling everyone's changes into a single central file. &nbsp;Instead, people work in their own branches and then make a &quot;pull request&quot; to alert their collaborators everyone about their work. &nbsp;People can then discuss the changes before they're merged back in.<br />
+and merging.&quot;</p>
+
+<p><br />
+==== Commit hooks and webhooks&nbsp;</p>
+
+<p>Commit hooks are special functions that &quot;fire&quot; whenever the content is changed. &nbsp;This is taken from the world of continuous deployment in the software development world, but it allows you to build new services using the Unix approach of &quot;small pieces, loosely joined.&quot; &nbsp;For example, we've built a system to collect and audit contributor license agreements. &nbsp;Each time someone makes a change to the source, the &quot;webhook&quot; fires to checks a database to see if that person has agreed to our CLA, and send them a notice if they have not agreed. &nbsp;This was built after the fact as an add-on, and this modularity assures that we can add new function without having to build a huge monolithic feature. &nbsp;For example, we're exploring tools to help with international rights management for assets like images.</p>
+
+<p>*********************************<br />
+* add a screenshot of the CLA system<br />
+********************************* &nbsp;</p>
+
+<p>==== GitHub ecosystem</p>
+
+<p>GitHub, a site that allows people to easily share and collaborate using Git, is perhaps the most exciting opportunities we've started to explore. &nbsp;Originally created for software developers to share open source projects, people have begun sharing content of all kinds on GitHub. &nbsp;There are collaboratively written books, translations, web sites, and even a set of federal standards for IT Innovation. &nbsp;</p>
+
+<p>*******************************************<br />
+* add a screenshot of the whitehouse initiative<br />
+**********************************************</p>
+
+<p><br />
+*******************************************<br />
+* translation of Scott Chacon's book<br />
+**********************************************</p>
+
+<p>O'Reilly has explored GitHub with a number of titles, such as:</p>
+
+<p>* Open Government book<br />
+* Etudes for Erlang</p>
+
+<p>*******************************************<br />
+* Do something here with some&nbsp;<br />
+**********************************************</p>
+
+<p>Since Atlas is based on Git, you can smoothly move content (and contributions) back and forth between the different platforms.</p>
+
+<p>=== Transformation Engines</p>
+
+<p>Once you have the content in a standard format in a Git, the final step is to transform it into the formats in which it will be distributed and consumed, including print and digital channels. &nbsp;The source content is typically transformed into some other format using XSLT. &nbsp;Once it's in the new format (like HTML or EPUB), it can be *styled*&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>==== Styling</p>
+
+<p>&nbsp;</p>
+
+<p>*******************************************<br />
+I'm not sure how the actual transforms are done-- I guess XSLT. &nbsp;This is something I need to understand better. &nbsp;Also, it would be really cool for Sanders to do a Pyxie book on XSLT that would be similar to whatever Steve is going to do with git.<br />
+*******************************************</p>
+
+<p>In the original toolchain, we used XSL-FO for the themes, but this technology has never been widely used outside of the publishing industry. &nbsp;So, in Atlas, we built out themes using CSS paged media, which is the same technology used on the web. &nbsp;This brought the time required to create a new theme down from months to days, allowing us to experiment much more quickly in bringing new products to market.</p>
+
+<p>*******************************************<br />
+* Examples of the same with different themes<br />
+**********************************************</p>
+
+<p>Because the talent pool is so much broader with CSS than with XSL-FO, we've also been able to quickly develop new competencies in house by training our production staff in CSS.&nbsp;</p>
+
+<p>*******************************************<br />
+* Encyclopedia of Electronics to show how rich the themes can be<br />
+*******************************************</p>
+
+<p>Themes that cut across all formats</p>
+
+<p>*******************************************<br />
+* Would there be time for Ron to make an epub theme out of something?<br />
+*******************************************</p>
+
+<p><br />
+==== Creating web content for the web</p>
+
+<p>==== Analytics</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
 </section>
