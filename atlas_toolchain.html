@@ -96,12 +96,17 @@
 <p><span style="font-size: 17px; line-height: 1.5em;">Our goal is to make writing and publishing the book as simple and easy as blogging, while still fully enabling rich version control features, the second key pillars of our approach to publishing. &nbsp;(It's probably worth noting that you can also still write in DocBook, AsciiDoc, or Markdown, but you only get the visual editor if you use HTMLBook.)</span></p>
 </section>
 
-<p><br />
-=== Version control</p>
+<p>&nbsp;</p>
 
-<p>A version control system allow people to work on the set of source files. &nbsp;Originally a tool from the software world, a version control system keeps track of all changes to a set of files, who made them and when, and ensures that any changes can be rolled back to some prior state. Originally, we used a VCS called Subversion, a command-line focused tool that allows user to &quot;check out&quot; the files when they want to work on them and then check their work back in when they're done. &nbsp;&nbsp;</p>
+<section data-type="sect1">
+<h1>Version Control</h1>
+
+<p><span style="font-size: 17px; line-height: 1.5em;">A version control system allow people to work on the set of source files. &nbsp;Originally a tool from the software world, a version control system keeps track of all changes to a set of files, who made them and when, and ensures that any changes can be rolled back to some prior state. Originally, we used a VCS called Subversion, a command-line focused tool that allows user to &quot;check out&quot; the files when they want to work on them and then check their work back in when they're done. &nbsp;&nbsp;</span></p>
 
 <p>A few years ago, at the urging of some of our authors, we switched to another system called Git. &nbsp;While at first this seemed like a minor change, it became increasingly clear that this was not simply a case of building a better mousetrap. &nbsp;The features and ecosystem built up around Git offered fundamentally new opportunities for us to explore, and Atlas is designed to work with Git as a backend so that you can easily get the benefits of this powerful tool.</p>
+
+<section data-type="sect2">
+<h2>A Decentralized, Collaborative Workflow</h2>
 
 <p>==== A decentralized, collaborative workflow</p>
 
@@ -109,15 +114,21 @@
 
 <p>The main advantage of this approach is that it eliminates a lot of the need to send Word files back and forth, and then go through the painful process of compiling everyone's changes into a single central file. &nbsp;Instead, people work in their own branches and then make a &quot;pull request&quot; to alert their collaborators everyone about their work. &nbsp;People can then discuss the changes before they're merged back in.<br />
 and merging.&quot;</p>
+</section>
 
-<p><br />
-==== Commit hooks and webhooks&nbsp;</p>
+<section data-type="sect2">
+<h2><br />
+Commit Hooks and Webhooks</h2>
 
-<p>Commit hooks are special functions that &quot;fire&quot; whenever the content is changed. &nbsp;This is taken from the world of continuous deployment in the software development world, but it allows you to build new services using the Unix approach of &quot;small pieces, loosely joined.&quot; &nbsp;For example, we've built a system to collect and audit contributor license agreements. &nbsp;Each time someone makes a change to the source, the &quot;webhook&quot; fires to checks a database to see if that person has agreed to our CLA, and send them a notice if they have not agreed. &nbsp;This was built after the fact as an add-on, and this modularity assures that we can add new function without having to build a huge monolithic feature. &nbsp;For example, we're exploring tools to help with international rights management for assets like images.</p>
+<p><span style="font-size: 17px; line-height: 1.5em;">Commit hooks are special functions that &quot;fire&quot; whenever the content is changed. &nbsp;This is taken from the world of continuous deployment in the software development world, but it allows you to build new services using the Unix approach of &quot;small pieces, loosely joined.&quot; &nbsp;For example, we've built a system to collect and audit contributor license agreements. &nbsp;Each time someone makes a change to the source, the &quot;webhook&quot; fires to checks a database to see if that person has agreed to our CLA, and send them a notice if they have not agreed. &nbsp;This was built after the fact as an add-on, and this modularity assures that we can add new function without having to build a huge monolithic feature. &nbsp;For example, we're exploring tools to help with international rights management for assets like images.</span></p>
 
 <p>*********************************<br />
 * add a screenshot of the CLA system<br />
 ********************************* &nbsp;</p>
+</section>
+
+<section data-type="sect2">
+<h2>Section Title</h2>
 
 <p>==== GitHub ecosystem</p>
 
@@ -142,6 +153,10 @@ and merging.&quot;</p>
 **********************************************</p>
 
 <p>Since Atlas is based on Git, you can smoothly move content (and contributions) back and forth between the different platforms.</p>
+</section>
+
+<p>&nbsp;</p>
+</section>
 
 <p>=== Transformation Engines</p>
 
