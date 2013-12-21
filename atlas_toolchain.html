@@ -158,17 +158,11 @@
 
 <p>==== Styling</p>
 
-<p>&nbsp;</p>
+<p><span style="font-size: 17px; line-height: 1.5em;">In the original toolchain, we used XSL-FO for the themes, but this technology has never been widely used outside of the publishing industry. &nbsp;So, in Atlas, we built out themes using CSS paged media, which is the same technology used on the web. &nbsp;This brought the time required to create a new theme down from months to days, allowing us to experiment much more quickly in bringing new products to market.</span></p>
 
-<p>*******************************************<br />
-I'm not sure how the actual transforms are done-- I guess XSLT. &nbsp;This is something I need to understand better. &nbsp;Also, it would be really cool for Sanders to do a Pyxie book on XSLT that would be similar to whatever Steve is going to do with git.<br />
-*******************************************</p>
-
-<p>In the original toolchain, we used XSL-FO for the themes, but this technology has never been widely used outside of the publishing industry. &nbsp;So, in Atlas, we built out themes using CSS paged media, which is the same technology used on the web. &nbsp;This brought the time required to create a new theme down from months to days, allowing us to experiment much more quickly in bringing new products to market.</p>
-
-<p>*******************************************<br />
-* Examples of the same with different themes<br />
-**********************************************</p>
+<figure><img alt="Alt Text" class="idoe_same_content_different_themepng" src="doe_same_content_different_theme.png" />
+<figcaption>The same source content but styled in two different themes.</figcaption>
+</figure>
 
 <p>Because the talent pool is so much broader with CSS than with XSL-FO, we've also been able to quickly develop new competencies in house by training our production staff in CSS.&nbsp;</p>
 
@@ -183,9 +177,25 @@ I'm not sure how the actual transforms are done-- I guess XSLT. &nbsp;This is so
 *******************************************</p>
 
 <p><br />
-==== Creating web content for the web</p>
+&nbsp;</p>
 
-<p>==== Analytics</p>
+<section data-type="sect2">
+<h2>Interactive Content</h2>
+
+<p>Content in Atlas can be easily exported to a fully interactive website, allowing authors to create compelling online sites like these:</p>
+
+<ul>
+	<li><a href="http://chimera.labs.oreilly.com/books/1234000001552/ch04.html#s04_5">Web Audio API</a> has interactive tools that allow the reader to manipulate the examples described in the book.</li>
+	<li><a data-original-title="" href="http://chimera.labs.oreilly.com/books/1230000000345/ch11.html#_pie_layout" title="">Interactive Data Visualization for the Web</a> contains live data visualizations that readers can manipulate using a &ldquo;Try It Now&rdquo; section.</li>
+	<li><a href="http://chimera.labs.oreilly.com/books/1234000001654/ch08.html#the_geo_blaster_basic_full_source">HTML5 Canvas</a> allows the reader to play a game that is described in the book itself.</li>
+</ul>
+
+<p>A critical feature of these interactive elements is that the author can include &ldquo;fallbacks&rdquo; for formats where the interactive element is not supported. For example, you can include a still image that will be automatically used in place of a video in the PDF version of the content.</p>
+
+<p>&nbsp;</p>
+</section>
+
+<p>&nbsp;</p>
 </section>
 
 <p>&nbsp;</p>
