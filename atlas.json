@@ -1,26 +1,28 @@
 {
   "files": [
-    "cover.html",
-    "01-titlepage.html",
-    "02-copyright.html",
     "03-toc.html",
-    "04-preface.html",
-    "05-chapter.html",
-    "06-appendix.html"
+    "atlas_toolchain.html"
   ],
   "formats": {
     "pdf": {
       "version": "web",
-      "toc": true
+      "toc": true,
+      "index": false
     },
     "epub": {
+      "index": false,
+      "toc": false,
+      "epubcheck": false
     },
     "mobi": {
+      "index": false,
+      "toc": false
     },
     "html": {
-      "toc": true
+      "toc": true,
+      "index": false
     }
   },
   "theme": "oreillymedia/atlas_tech1c_theme",
-  "title": "atlas-toolchain-narrative"
+  "title": "The O'Reilly Toolchain and Atlas in Context"
 }
