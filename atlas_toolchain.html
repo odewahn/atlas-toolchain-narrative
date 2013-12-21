@@ -30,9 +30,35 @@
 
 <p>In the original O'Reilly Toolchain, we used DocBook XML, a standard that O'Reilly was intimately involved in creating. &nbsp;(Dale Dougherty, O'Reilly co-founder, was an original member of the committee, and Lenny Mueller wrote the seminal book on the subject.) &nbsp;DocBook defines an incredibly rich dialect for structured information, and has evolved to accommodate many different requirements. &nbsp;O'Reilly has been using DocBook since the mid-90s, and converted the majority of our content to the format starting in 2006. &nbsp;</p>
 
-<p>*********************************<br />
-* add an example of docbook here<br />
-*********************************</p>
+<pre data-code-language="xml" data-original-title="" data-type="programlisting" title="">
+&nbsp; &nbsp;&lt;itemizedlist role=&quot;compact&quot;&gt;
+&nbsp; &nbsp; &nbsp; &lt;listitem&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;para&gt;python-novaclient (&lt;glossterm&gt;nova&lt;/glossterm&gt; CLI)&lt;/para&gt;
+&nbsp; &nbsp; &nbsp; &lt;/listitem&gt;
+
+&nbsp; &nbsp; &nbsp; &lt;listitem&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;para&gt;python-glanceclient (&lt;glossterm&gt;glance&lt;/glossterm&gt; CLI)&lt;/para&gt;
+&nbsp; &nbsp; &nbsp; &lt;/listitem&gt;
+
+&nbsp; &nbsp; &nbsp; &lt;listitem&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;para&gt;python-keystoneclient (&lt;glossterm&gt;keystone&lt;/glossterm&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; CLI)&lt;/para&gt;
+&nbsp; &nbsp; &nbsp; &lt;/listitem&gt;
+
+&nbsp; &nbsp; &nbsp; &lt;listitem&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;para&gt;python-cinderclient (&lt;glossterm&gt;cinder&lt;/glossterm&gt; CLI)&lt;/para&gt;
+&nbsp; &nbsp; &nbsp; &lt;/listitem&gt;
+
+&nbsp; &nbsp; &nbsp; &lt;listitem&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;para&gt;python-swiftclient (&lt;glossterm&gt;swift&lt;/glossterm&gt; CLI)&lt;/para&gt;
+&nbsp; &nbsp; &nbsp; &lt;/listitem&gt;
+
+&nbsp; &nbsp; &nbsp; &lt;listitem&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;para&gt;python-quantumclient (&lt;glossterm&gt;quantum&lt;/glossterm&gt; CLI)&lt;/para&gt;
+&nbsp; &nbsp; &nbsp; &lt;/listitem&gt;
+&nbsp; &nbsp; &lt;/itemizedlist&gt;
+
+</pre>
 
 <p>The key weakness of DocBook, thought, is that it presents a very high bar for the author. &nbsp;While many of our authors come from very technical fields and were comfortable working in the format, most were not. &nbsp;So, consequently, most of them would write in a format like MS Word using a special template, and we'd send it our for conversion. &nbsp;Once it was converted, our production staff would work from this as a single source. &nbsp;</p>
 
@@ -40,9 +66,14 @@
 
 <p>Consequently, &nbsp;we started looking exploring a variety of ways to lower the barriers to entry to this format. &nbsp;The most promising experiment was with a format called AsciiDoc, which was a much simpler format whose elements mapped directly to the corresponding elements in DocBook. &nbsp;Here's an example:</p>
 
-<p>*********************************<br />
-* add an example of asciidoc<br />
-********************************* &nbsp;</p>
+<pre data-code-language="asciidoc" data-original-title="" data-type="programlisting" title="">
+* python-novaclient
+* python-glanceclient
+* python-keystoneclient
+* python-cinderclient
+* python-swiftclient
+* python-quantumclient
+</pre>
 
 <p>As you can see, it's a far simpler looking format, and we began using it in earnest around 2010. &nbsp;Despite this improvement, AsciiDoc was still too high a barrier for many authors, editor, and production staff. &nbsp;In particular, the lack of a WYSIWYG experience was cited as the&nbsp;</p>
 
